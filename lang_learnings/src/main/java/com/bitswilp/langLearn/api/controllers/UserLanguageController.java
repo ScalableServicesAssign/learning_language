@@ -3,11 +3,14 @@ package com.bitswilp.langLearn.api.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.bitswilp.langLearn.api.dao.LangResponseDao;
+import com.bitswilp.langLearn.api.dto.LangLearnResponseDto;
 import com.bitswilp.langLearn.api.models.UserLanguageModel;
 import com.bitswilp.langLearn.api.models.UserLanguageQuizModel;
 import com.bitswilp.langLearn.api.models.UserLanguageStructureModel;
 import com.bitswilp.langLearn.api.models.UserLanguageYoutubeLinkModel;
 import com.bitswilp.langLearn.api.repository.UserLanguageRepository;
+import com.bitswilp.langLearn.api.service.LangLearnService;
 import com.bitswilp.langLearn.api.service.UserLanguageService;
 
 import io.swagger.v3.oas.annotations.Operation;
@@ -19,6 +22,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 
 
@@ -35,6 +39,8 @@ public class UserLanguageController {
 	
 	
 	
+	
+	
 	 @Operation( 
 			 summary = "GET Operation on languages", 
 			 description ="to fetch details of languages from database" 
@@ -47,8 +53,7 @@ public class UserLanguageController {
 
 }
 
-
-
+	 
 	 @Operation( summary = "GET Operation on quiz related to languages",
 			  description = "to fetch quiz details of languages from database" )
  

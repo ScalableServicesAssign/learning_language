@@ -6,6 +6,8 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.bitswilp.langLearn.api.dao.LangResponseDao;
+import com.bitswilp.langLearn.api.dto.LangLearnResponseDto;
 import com.bitswilp.langLearn.api.models.UserLanguageModel;
 import com.bitswilp.langLearn.api.models.UserLanguageQuizModel;
 import com.bitswilp.langLearn.api.models.UserLanguageStructureModel;
@@ -32,6 +34,9 @@ public class UserLanguageServiceImple implements UserLanguageService{
 	
 	@Autowired
 	private UserLanguageYoutubeLinkModelRepo youtubeRepo;
+	
+	@Autowired
+	private LangResponseDao langRespDao;
 
 	@Override
 	public List<UserLanguageModel> getAllLanguages() {
@@ -39,6 +44,8 @@ public class UserLanguageServiceImple implements UserLanguageService{
 		return langs.stream().map((lan)->mapToLang(lan)).collect(Collectors.toList());
 	}
 
+	
+	
 private UserLanguageModel mapToLang(UserLanguageModel langMod) {
 	UserLanguageModel langsMod = new UserLanguageModel();
 	langsMod.setLanguages(langMod.getLanguages());
